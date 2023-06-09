@@ -1,5 +1,8 @@
 package com.example.demo.Service;
 
+import java.util.List;
+
+import com.example.demo.Entity.UserEntity;
 import com.example.demo.dto.ProcedureOutputResponceBean;
 import com.example.demo.dto.UserAddOrUpdateBean;
 import com.example.demo.dto.UserLoginBean;
@@ -14,7 +17,7 @@ public interface UserService {
 	
 	public ProcedureOutputResponceBean getUserByRollID(String userrollid);
 	
-	public ProcedureOutputResponceBean getUserlist();
+	public List<UserEntity> getUserlist();
 
 	public ProcedureOutputResponceBean getUserlogin(UserLoginBean userloginbean);
 }

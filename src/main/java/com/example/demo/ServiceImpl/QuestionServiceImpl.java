@@ -29,7 +29,7 @@ public class QuestionServiceImpl implements QuestionService {
 	}
 
 	@Override
-	public ProcedureOutputResponceBean getAllQuestionlist() {
+	public List<QuestionListViewEntiry> getAllQuestionlist() {
 		
 		System.out.println("Question controller");
 		
@@ -59,12 +59,12 @@ public class QuestionServiceImpl implements QuestionService {
 				outputbean.setPo_message(Constants.FAILURE);
 			}		
 			
-			return   outputbean;
+			return   questionlist;
 			
 		}
 
 	@Override
-	public ProcedureOutputResponceBean getQuestionById(Integer questionid) {
+	public List<QuestionListViewEntiry> getQuestionById(Integer questionid) {
 		
 		System.out.println(" questionid ->" + questionid);
 		
@@ -94,7 +94,7 @@ public class QuestionServiceImpl implements QuestionService {
 				outputbean.setPo_message(Constants.FAILURE);
 			}		
 			
-			return   outputbean;
+			return questionlist;
 	}
 
 }

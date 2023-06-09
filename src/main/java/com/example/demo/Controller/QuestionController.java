@@ -1,5 +1,7 @@
 package com.example.demo.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.Entity.QuestionListViewEntiry;
 import com.example.demo.Service.QuestionService;
 import com.example.demo.dto.ProcedureOutputResponceBean;
 import com.example.demo.dto.QuestionAddOrUpdateBean;
@@ -24,13 +27,13 @@ public class QuestionController {
 	QuestionService questionservice;
 	
 	@GetMapping("/getallquestion/")
-	public ProcedureOutputResponceBean getAllQuestionList() {
+	public List<QuestionListViewEntiry> getAllQuestionList() {
 		return questionservice.getAllQuestionlist();
 
 	}
 	
 	@GetMapping("/getquestionbyid/{questionid}")
-	public ProcedureOutputResponceBean getQuestionById(@PathVariable Integer questionid ) {
+	public List<QuestionListViewEntiry> getQuestionById(@PathVariable Integer questionid ) {
 		return questionservice.getQuestionById(questionid);
 
 	}

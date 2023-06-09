@@ -76,7 +76,7 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
-	public ProcedureOutputResponceBean getUserlist() {
+	public List<UserEntity> getUserlist() {
 		ProcedureOutputResponceBean outputbean = new ProcedureOutputResponceBean();
 		List<UserEntity> userDetailsList = userrepository.getUserlist();
 		
@@ -103,7 +103,7 @@ public class UserServiceImpl implements UserService{
 			outputbean.setPo_message(Constants.FAILURE);
 		}		
 		
-		return   outputbean;
+		return   userDetailsList;
 		
 	}
 
