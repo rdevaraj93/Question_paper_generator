@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 public class QuestionAddOrUpdateBean {
