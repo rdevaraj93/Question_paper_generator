@@ -16,6 +16,6 @@ import lombok.Setter;
 @PropertySource("application.yml")
 public class ExamPatten {
 
-	private QuestionTotalMarkPatten totalmark;
-	private QuestionTotalMarkPatten totalmark_op;
+	private QuestionTotalMarkPatten withoutoptional;
+	private QuestionTotalMarkPatten withoptional;
 }

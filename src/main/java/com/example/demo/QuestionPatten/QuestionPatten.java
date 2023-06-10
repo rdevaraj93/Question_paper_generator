@@ -12,9 +12,9 @@ import lombok.Setter;
 @EnableConfigurationProperties
 public class QuestionPatten {
 	
-	private QuestionDificalty onemarkques;
-	private QuestionDificalty Twomarkques;
-	private QuestionDificalty Fivemarkques;
-	private QuestionDificalty Tenmarkques;
+	private QuestionDificalty onemarkquestion;
+	private QuestionDificalty Twomarkquestion;
+	private QuestionDificalty Fivemarkquestion;
+	private QuestionDificalty Tenmarkquestion;
 	
 }
