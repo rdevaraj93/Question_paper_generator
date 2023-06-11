@@ -19,7 +19,7 @@ public class QuestionPaperGeneraterController {
 	
 	@PostMapping("/newquestionpaper")
 	public ProcedureOutputResponceBean generateNewQuestionPaper(@RequestBody QuestionPaperAddOrDeleteBean questionpaperaddordeletebean) { 
-		System.out.println("*************************");
+		System.out.println(" total unites {" + questionpaperaddordeletebean.getUnitIDList());
 		return questionpapergeneraterservice.generateNewQuestionPaper(questionpaperaddordeletebean);
 	}
 }
