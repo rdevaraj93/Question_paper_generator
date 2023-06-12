@@ -1,7 +1,6 @@
-package com.example.demo.Controller;
+package com.example.demo.Dummy;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,17 +11,13 @@ import com.example.demo.Utils.Config;
 import lombok.Getter;
 import lombok.Setter;
 
-
-
- 
 @Getter
 @Setter
 @RestController
-@RequestMapping("/Test/")
-@Component
-//@PropertySource("application.yml")
-public class TestController {
-
+@RequestMapping("/Testwelcom/")
+public class TestRun {
+	
+	 
 	@Autowired
     private Config config;
 	
@@ -43,6 +38,4 @@ public class TestController {
 //		System.out.println("getTenmarkques " + getTenmarkconfig().getTenmarkques());
 	}
 
-
-	 
 }

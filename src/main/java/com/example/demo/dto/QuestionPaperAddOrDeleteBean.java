@@ -19,7 +19,7 @@ public class QuestionPaperAddOrDeleteBean {
 	private String examName;
 	private Integer departmentID;
 	private Integer subjectID;
-	private Integer unitIDList;
+	private List<Integer> unitIDList;
 	private Integer totalexammark;
 	private String issuppotoptional;
 	//private JSONArray questionlist;
