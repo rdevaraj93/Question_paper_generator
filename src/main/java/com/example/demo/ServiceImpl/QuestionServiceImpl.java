@@ -25,6 +25,7 @@ public class QuestionServiceImpl implements QuestionService {
 	
 	@Override
 	public ProcedureOutputResponceBean questionAddOrUpdate(QuestionAddOrUpdateBean questionaddorupdatebean) {
+		System.out.println("THis question Service called");
 		return questiondaorepository.questionAddOrUpdate(questionaddorupdatebean);
 	}
 

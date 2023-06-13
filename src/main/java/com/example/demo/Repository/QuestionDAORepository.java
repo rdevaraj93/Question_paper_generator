@@ -16,7 +16,7 @@ public class QuestionDAORepository extends DataBaseAdapter {
 	public ProcedureOutputResponceBean questionAddOrUpdate(QuestionAddOrUpdateBean questionaddorupdatebean) {
 		
 		ProcedureOutputResponceBean outputbean = new ProcedureOutputResponceBean();
-		//System.out.println("User Add is working fine ------------------>");
+		System.out.println("User Add is working fine ------------------>");
 		String pkguseraddorupdate =  "{call pkg_create_update_Question(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
 		
 		try(Connection connection = getJDBConnection();
@@ -47,6 +47,10 @@ public class QuestionDAORepository extends DataBaseAdapter {
 			e.printStackTrace();
 			System.out.println("Exception Occured");
 		}
+		
+		System.out.println(outputbean.getPo_new_id());
+		System.out.println(outputbean.getPo_success_flag());
+		System.out.println(outputbean.getPo_message());
 		
 		return outputbean;
 	

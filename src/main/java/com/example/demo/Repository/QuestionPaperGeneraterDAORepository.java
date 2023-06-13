@@ -56,5 +56,35 @@ public class QuestionPaperGeneraterDAORepository  extends DataBaseAdapter{
 		return outputbean;
 	
 	}
+
+	public ProcedureOutputResponceBean deleteQuestionPaper(Integer examid) {
+		ProcedureOutputResponceBean outputbean = new ProcedureOutputResponceBean();	 
+		String pkguseraddorupdate =  "{call pkg_delete_question_paper(?,?,?,?)}";
+		try(Connection connection = getJDBConnection();
+				CallableStatement callablestatement = getCallableStatement(connection, pkguseraddorupdate)){
+			
+			 
+				callablestatement.setInt(1, examid);
+				callablestatement.registerOutParameter(2, java.sql.Types.INTEGER);
+				callablestatement.registerOutParameter(3, java.sql.Types.INTEGER);
+				callablestatement.registerOutParameter(4, java.sql.Types.VARCHAR);
+				
+				callablestatement.executeUpdate();
+				outputbean.setPo_new_id(callablestatement.getInt(2));
+				outputbean.setPo_success_flag(callablestatement.getInt(3));
+				outputbean.setPo_message(callablestatement.getString(4));
+			 
+				
+			}
+			 catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Exception Occured");
+		}
+		
+		return outputbean;
+		
+	}
+	
+	
 	
 }

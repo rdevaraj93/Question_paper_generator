@@ -4,17 +4,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.Entity.ExamListViewEntity;
+import com.example.demo.Entity.ExamQuestionListViewEntity;
 import com.example.demo.Entity.QuestionListViewEntiry;
 import com.example.demo.QuestionPatten.ExamPatten;
 import com.example.demo.QuestionPatten.QuestionPatten;
 import com.example.demo.Repository.QuestionPaperGeneraterDAORepository;
+import com.example.demo.Repository.QuestionPaperRepository;
 import com.example.demo.Repository.QuestionRepository;
 import com.example.demo.Service.QuestionPaperGeneraterService;
 import com.example.demo.Utils.ExamQuestionProperty;
@@ -38,6 +39,10 @@ public class QuestionPaperGeneraterServiceImpl implements QuestionPaperGenerater
 	
 	@Autowired
 	ExamQuestionProperty examquestionproperty;
+	
+	@Autowired
+	QuestionPaperRepository questionpapaerrepository;
+		
 	
 	public List<QuestionListViewEntiry> randomQuestionList(List<QuestionListViewEntiry> questionlist, Integer questionCount){
 		
@@ -321,5 +326,48 @@ public class QuestionPaperGeneraterServiceImpl implements QuestionPaperGenerater
 	
 		return questionpapergeneraterdaorepository.generateNewQuestionPaper(questionpaperaddordeletebean, finalList);
 	}
+
+	@Override
+	public ProcedureOutputResponceBean deleteQuestionPaper(Integer examid) {
+		
+		System.out.println("this service implementtion class");
+		return questionpapergeneraterdaorepository.deleteQuestionPaper(examid);
+		
+	}
+
+	@Override
+	public List<ExamQuestionListViewEntity> getExamQuestionListByExamId(Integer examid) {	 	 
+		return  questionpapaerrepository.getExamQuestionListByExamId(examid); 
+	}
+	
+	@Override
+	public List<ExamQuestionListViewEntity> getExamQuestionList() {	 	 
+		return questionpapaerrepository.getExamQuestionList();
+	}
+	
+	@Override
+	public List<ExamListViewEntity> getAllExamList() {	 	 
+		System.out.println("this service getAllExamList inde imple class");
+		return questionpapaerrepository.getAllExamList();
+	}
+	
+	@Override
+	public  List<ExamListViewEntity> getExamListByExamId(Integer examid) {
+		
+		System.out.println("this service implementtion class");
+		return questionpapaerrepository.getExamListByExamId(examid);
+		
+	}
+	
+	@Override
+	public  List<ExamListViewEntity> getExamListByDepartmentId(Integer deparmentid) {
+		
+		System.out.println("this service implementtion class");
+		return questionpapaerrepository.getExamListByDepartmentId(deparmentid);
+		
+	}
+	
+	
+	
 
 }

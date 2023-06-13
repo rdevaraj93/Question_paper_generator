@@ -40,6 +40,7 @@ public class QuestionController {
 	
 	@PostMapping("/addquestion/")
 	public ProcedureOutputResponceBean questionAdd(@RequestBody QuestionAddOrUpdateBean questionaddorupdatebean) {
+		System.out.println("THis question controller called");
 		return questionservice.questionAddOrUpdate(questionaddorupdatebean);
 	
 	}
