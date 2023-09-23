@@ -3,6 +3,7 @@ package com.example.demo.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,19 +20,22 @@ import com.example.demo.dto.UserLoginBean;
 
 @RestController
 @RequestMapping("/user/")
+@CrossOrigin("http://localhost:3000/")
 public class UserController {
 	
 	@Autowired
 	UserService userservice;
 	
-	@GetMapping("/userlogin/")
+	
+
+	@PostMapping("/userlogin/")
 	public ProcedureOutputResponceBean getUserlogin(@RequestBody UserLoginBean userloginbean) {
 		return userservice.getUserlogin(userloginbean);
 		//System.out.println("TEST");
 	}
 	
-	@GetMapping("/getuser/userid/{userid}")
-	public ProcedureOutputResponceBean getUserByID(@PathVariable Integer userid) {
+	@PostMapping("/getuser/userid/{userid}")
+	public UserEntity getUserByID(@PathVariable Integer userid) {
 		return userservice.getUserByID(userid);
 		//System.out.println("TEST");
 	}
@@ -46,6 +50,7 @@ public class UserController {
 	public List<UserEntity> getUserlist() {
 		return userservice.getUserlist();
 		//System.out.println("TEST");
+		 
 	}
 	
 	@PostMapping("/adduser")

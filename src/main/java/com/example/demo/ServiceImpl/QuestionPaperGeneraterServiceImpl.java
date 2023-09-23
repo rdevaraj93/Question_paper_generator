@@ -322,8 +322,7 @@ public class QuestionPaperGeneraterServiceImpl implements QuestionPaperGenerater
 		}
 				
 		finalList = finalQuestionIDList;
- 				
-	
+		
 		return questionpapergeneraterdaorepository.generateNewQuestionPaper(questionpaperaddordeletebean, finalList);
 	}
 
@@ -352,7 +351,7 @@ public class QuestionPaperGeneraterServiceImpl implements QuestionPaperGenerater
 	}
 	
 	@Override
-	public  List<ExamListViewEntity> getExamListByExamId(Integer examid) {
+	public  ExamListViewEntity getExamListByExamId(Integer examid) {
 		
 		System.out.println("this service implementtion class");
 		return questionpapaerrepository.getExamListByExamId(examid);

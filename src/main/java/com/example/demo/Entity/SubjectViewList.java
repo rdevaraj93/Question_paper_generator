@@ -10,21 +10,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
- 
 @Getter
 @Setter
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "vw_department")
-public class DepartmentViewEntiry {
-		
+@Table(name = "vw_subject")
+public class SubjectViewList {
+
+	 
 	@Id
-	@Column(name="Depart_id_pk")
-	private Integer departmentID;
-	
-	@Column(name="depart_name")
-	private String departmentName;
+	@Column(name="subject_id_pk")
+	private Integer subjectidpk;
+
+	@Column(name="subject_name")
+	private String subjectname;
 	
 }

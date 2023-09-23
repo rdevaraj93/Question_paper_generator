@@ -31,6 +31,12 @@ public class ExamListViewEntity {
 	
 	@Column(name="depart_name")
 	private String departname;
+	
+	@Column(name="subject_id_fk")
+	private Integer subjectidfk;
+	
+	@Column(name="subject_name")
+	private String subjectname;
 
 	@Column(name="Total_mark")
 	private Integer totalmark;

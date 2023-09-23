@@ -17,7 +17,7 @@ public interface QuestionPaperGeneraterService {
 	
 	List<ExamQuestionListViewEntity> getExamQuestionList();
 	
-	List<ExamListViewEntity> getExamListByExamId(Integer examid);
+	ExamListViewEntity getExamListByExamId(Integer examid);
 	
 	List<ExamListViewEntity> getAllExamList();
 

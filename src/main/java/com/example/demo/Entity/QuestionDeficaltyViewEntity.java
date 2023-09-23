@@ -10,21 +10,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
- 
 @Getter
 @Setter
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "vw_department")
-public class DepartmentViewEntiry {
-		
+@Table(name = "tm_question_difficulty")
+public class QuestionDeficaltyViewEntity {
+
 	@Id
-	@Column(name="Depart_id_pk")
-	private Integer departmentID;
-	
-	@Column(name="depart_name")
-	private String departmentName;
+	@Column(name="difficulty_id_pk")
+	private Integer difficultyidpk;
+
+	@Column(name="difficulty_description")
+	private String difficultydescription;
 	
 }

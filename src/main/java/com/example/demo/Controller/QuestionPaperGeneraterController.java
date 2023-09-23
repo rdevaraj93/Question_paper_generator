@@ -3,6 +3,7 @@ package com.example.demo.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import com.example.demo.dto.QuestionPaperAddOrDeleteBean;
 
 @RestController
 @RequestMapping("/generate/")
+@CrossOrigin("http://localhost:3000/")
 public class QuestionPaperGeneraterController {
 	
 	@Autowired
@@ -26,8 +28,9 @@ public class QuestionPaperGeneraterController {
 	
 	@PostMapping("/newquestionpaper")
 	public ProcedureOutputResponceBean generateNewQuestionPaper(@RequestBody QuestionPaperAddOrDeleteBean questionpaperaddordeletebean) { 
-		System.out.println(" total unites {" + questionpaperaddordeletebean.getUnitIDList());
+		
 		return questionpapergeneraterservice.generateNewQuestionPaper(questionpaperaddordeletebean);
+		
 	}
 	
 	@DeleteMapping("/questiondelete/{examid}")
@@ -60,7 +63,7 @@ public class QuestionPaperGeneraterController {
 	}
 	
 	@GetMapping("/getexamList/{examid}")
-	public List<ExamListViewEntity> getExamListByExamId(@PathVariable Integer examid) { 
+	public ExamListViewEntity getExamListByExamId(@PathVariable Integer examid) { 
 		System.out.println("you called getAllExamList");
 		return questionpapergeneraterservice.getExamListByExamId(examid);
 	}

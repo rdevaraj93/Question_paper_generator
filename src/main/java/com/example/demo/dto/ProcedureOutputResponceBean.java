@@ -58,11 +58,4 @@ public class ProcedureOutputResponceBean implements Serializable {
 		this.po_message = po_message;
 	}
 	
-	
-	 
-	 
-	
-	
-	
-	
 }

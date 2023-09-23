@@ -50,6 +50,9 @@ public class ExamQuestionListViewEntity implements Serializable{
 
 	@Column(name="question_id_pk")
 	private Integer questionid;
+	
+	@Column(name="Question_ID")
+	private String question_id;
 
 	@Column(name="question_Description")
 	private String questiondescription;
@@ -59,6 +62,13 @@ public class ExamQuestionListViewEntity implements Serializable{
 
 	@Column(name="depart_name")
 	private String departmentname;
+	
+	@Column(name="subject_id_fk")
+	private Integer subjectidfk;
+
+	@Column(name="subject_name")
+	private String subjectname;
+
 
 	@Column(name="terms_id_fk")
 	private Integer termsid;
@@ -82,7 +92,7 @@ public class ExamQuestionListViewEntity implements Serializable{
 	private Integer questionweightid;
 
 	@Column(name="weight_age")
-	private Integer weightage;
+	private String weightage;
 
 	@Column(name="IS_importent")
 	private String isimportent;

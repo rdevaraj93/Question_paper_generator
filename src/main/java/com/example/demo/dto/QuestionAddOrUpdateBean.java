@@ -1,5 +1,7 @@
 package com.example.demo.dto;
 
+import com.example.demo.Entity.DepartmentViewEntiry;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -12,6 +14,7 @@ import lombok.Setter;
 public class QuestionAddOrUpdateBean {
 
 	private Integer questionId;
+	private String  questionuniid;
 	private String 	questionDescription;
 	private Integer	departId;
 	private Integer	subjectId;
@@ -33,11 +36,12 @@ public class QuestionAddOrUpdateBean {
 	}
 
 
-	public QuestionAddOrUpdateBean(Integer questionId, String questionDescription, Integer departId, Integer subjectId,
+	public QuestionAddOrUpdateBean(Integer questionId, String questionuniid, String questionDescription, Integer departId, Integer subjectId,
 			Integer unitId, Integer difficultyId, Integer termId, Integer questWeightAgeId, String isImportant,
 			String isRepeat, String isValid, Integer createUserId, Integer updatedUserId) {
 		super();
 		this.questionId = questionId;
+		this.questionuniid = questionuniid;
 		this.questionDescription = questionDescription;
 		this.departId = departId;
 		this.subjectId = subjectId;

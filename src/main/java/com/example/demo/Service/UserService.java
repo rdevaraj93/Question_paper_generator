@@ -13,7 +13,7 @@ public interface UserService {
 	
 	public ProcedureOutputResponceBean userDelete(Integer userid);
 
-	public ProcedureOutputResponceBean getUserByID(Integer userid);
+	public UserEntity getUserByID(Integer userid);
 	
 	public ProcedureOutputResponceBean getUserByRollID(String userrollid);
 	

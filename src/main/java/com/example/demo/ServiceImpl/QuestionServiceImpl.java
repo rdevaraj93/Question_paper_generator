@@ -5,7 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.Entity.QuestionDeficaltyViewEntity;
 import com.example.demo.Entity.QuestionListViewEntiry;
+import com.example.demo.Entity.QuestionMarkListViewEntity;
+import com.example.demo.Entity.SubjectViewList;
+import com.example.demo.Entity.UnitListViewEntity;
 import com.example.demo.Entity.UserEntity;
 import com.example.demo.Repository.QuestionDAORepository;
 import com.example.demo.Repository.QuestionRepository;
@@ -62,18 +66,26 @@ public class QuestionServiceImpl implements QuestionService {
 			
 			return   questionlist;
 			
+			
+		}
+	
+	@Override
+	public List<QuestionListViewEntiry> getAllQuestionListBydeparmnt(Integer departmentid) {	
+		System.out.println("Question controller");	
+		return questionrepository.getAllQuestionListBydeparmnt(departmentid);
+					
 		}
 
 	@Override
-	public List<QuestionListViewEntiry> getQuestionById(Integer questionid) {
+	public QuestionListViewEntiry getQuestionById(Integer questionid) {
 		
 		System.out.println(" questionid ->" + questionid);
 		
 		ProcedureOutputResponceBean outputbean = new ProcedureOutputResponceBean();
-		List<QuestionListViewEntiry> questionlist = questionrepository.getQuestionById(questionid);
+		QuestionListViewEntiry questionlist = questionrepository.getQuestionById(questionid);
 			
 			
-			if (questionlist.size() > 0) {
+		/*	if (questionlist.size() > 0) {
 				for (QuestionListViewEntiry questionEntity : questionlist) 
 				{
 					System.out.println("****************************");
@@ -94,8 +106,35 @@ public class QuestionServiceImpl implements QuestionService {
 				outputbean.setPo_success_flag(Constants.FAILURE_FLAG_VALUE);
 				outputbean.setPo_message(Constants.FAILURE);
 			}		
-			
+			*/
 			return questionlist;
+	}
+
+	@Override
+	public List<QuestionDeficaltyViewEntity> getQuestionDeficalty() {
+		// TODO Auto-generated method stub
+		return questionrepository.getQuestionDeficalty();
+	}
+	
+	@Override
+	public List<QuestionMarkListViewEntity> getQuestionMarkList() {
+		// TODO Auto-generated method stub
+		return questionrepository.getQuestionMarkList();
+		
+	}
+	
+	@Override
+	public List<UnitListViewEntity> getUnitList() {
+		// TODO Auto-generated method stub
+		return questionrepository.getUnitList();
+		
+	}
+	
+	@Override
+	public List<SubjectViewList> getSubjectNameList() {
+		// TODO Auto-generated method stub
+		return questionrepository.getSubjectNameList();
+		
 	}
 
 }

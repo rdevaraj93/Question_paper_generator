@@ -22,7 +22,7 @@ public interface QuestionPaperRepository extends CrudRepository<ExamQuestionList
 	List<ExamListViewEntity> getAllExamList();
 	
 	@Query("SELECT questionlist FROM ExamListViewEntity questionlist where examid in (:examid)")
-	List<ExamListViewEntity> getExamListByExamId(Integer examid);
+	ExamListViewEntity getExamListByExamId(Integer examid);
 	
 	@Query("SELECT questionlist FROM ExamListViewEntity questionlist where departid in (:deparmentid)")
 	List<ExamListViewEntity> getExamListByDepartmentId(Integer deparmentid);	
